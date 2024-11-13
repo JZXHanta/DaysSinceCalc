@@ -3,9 +3,7 @@ import argparse
 
 
 def calculate(date_input: str) -> str:
-    # date_string = "2024-05-06"  # Format: YYYY-MM-DD
     date_string = date_input
-    print("date_string:", date_string)
     past_date = datetime.strptime(date_string, "%Y-%m-%d").date()
     today = date.today()
     days_difference = (today - past_date).days
@@ -22,7 +20,6 @@ def get_date() -> str:
 
     args = parser.parse_args()
     date = args.date
-    print("date:", date)
     return date
 
 
