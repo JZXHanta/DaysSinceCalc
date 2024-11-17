@@ -1,19 +1,18 @@
 from datetime import datetime, date
 import argparse
 
-class Colors:
-    light_green = "\033[1;32m"
-    light_blue = "\033[1;34m"
-    light_red = "\033[1;31m"
-    end = "\033[0m"
+class COLORS:
+    LIGHT_GREEN: str = "\033[1;32m"
+    LIGHT_BLUE: str = "\033[1;34m"
+    LIGHT_RED: str = "\033[1;31m"
+    END = "\033[0m"
 
 
 def calculate(date_input: str) -> str:
     date_string = date_input
-    past_date = datetime.strptime(date_string, "%Y-%m-%d").date()
-    today = date.today()
-    days_difference = (today - past_date).days
-    # print(f"Days since {date_string}: {days_difference}")
+    past_date: datetime.date = datetime.strptime(date_string, "%Y-%m-%d").date()
+    today: datetime.date = date.today()
+    days_difference: int = (today - past_date).days
     return str(days_difference)
 
 
@@ -28,16 +27,16 @@ def get_date() -> str:
     date = args.date
     return date
 
-def colorify():
-    date_string = get_date()
-    days_since = calculate(date_string)
+def colorify() -> str:
+    date_string: str = get_date()
+    days_since: str = calculate(date_string)
 
     if int(days_since) >= 30:
         # Too long
-        return f"Days since {date_string}: {Colors.light_red}{days_since}{Colors.end}"
+        return f"Days since {date_string}: {COLORS.LIGHT_RED}{days_since}{COLORS.END}"
     else:
-        return f"Days since {date_string}: {Colors.light_green}{days_since}{Colors.end}"
+        return f"Days since {date_string}: {COLORS.LIGHT_GREEN}{days_since}{COLORS.END}"
 
 if __name__ == "__main__":
-    days_since = colorify()
+    days_since: str = colorify()
     print(days_since)
