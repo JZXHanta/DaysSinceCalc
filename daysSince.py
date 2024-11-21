@@ -1,6 +1,5 @@
 from datetime import datetime, date
 import argparse
-import uvicorn
 import server
 
 class COLORS:
@@ -41,6 +40,7 @@ def colorify(date_string: str) -> str:
         return f"Days since {date_string}: {COLORS.LIGHT_RED}{days_since}{COLORS.END}"
     else:
         return f"Days since {date_string}: {COLORS.LIGHT_GREEN}{days_since}{COLORS.END}"
+
 
 if __name__ == "__main__":
     date_input, serve = get_date()
