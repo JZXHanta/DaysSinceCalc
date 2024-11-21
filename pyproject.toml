@@ -1,7 +1,7 @@
 [project]
 name = "dayssincecalc"
 version = "0.1.0"
-description = "Add your description here"
+description = "Calculates days since specified date: can be used as a cli app, or to serve a json response"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
