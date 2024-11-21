@@ -1,5 +1,6 @@
 from datetime import datetime, date
 import argparse
+import uvicorn
 import server
 
 class COLORS:
