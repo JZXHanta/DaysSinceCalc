@@ -4,8 +4,8 @@ A very simple app that calculates days since specified date: can be used as a cl
 
 ### How to install:
 
-- Clone
-- cd into cloned directory
+- Clone this repo
+- CD into cloned directory: `cd DaysSinceCalc`
 - Install dependencies:
   - With UV:
     `uv sync`
